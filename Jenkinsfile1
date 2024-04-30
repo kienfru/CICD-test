@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout your source code repository
+                // Checkout from the source code repository
                 git branch: 'main', url: 'https://github.com/dazealot88/vpc-codes.git'
             }
         }
@@ -41,7 +41,7 @@ pipeline {
             steps {
                 // Apply the changes required to reach the desired state of the configuration
                 script {
-                    sh 'terraform apply tfplan'
+                    sh 'terraform apply --auto-approve'
                 }
             }
         }
