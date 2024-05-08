@@ -35,7 +35,7 @@ pipeline {
             steps {
                 // Generate and display an execution plan
                 script {
-                    sh 'terraform plan -out=tfplan'
+                    sh 'terraform plan'
                 }
             }
         }
